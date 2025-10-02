@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="">Enter Weight:</label>
+    <input type="number" id="Weight"><br><br>
+    <label >Enter Height:</label>
+    <input type="number" id="height">
+
+<br><br>
+    <button id="click">enter</button>
+    <h5></h5>
+
+    <script>
+        let btn=document.querySelector("#click")
+
+        btn.addEventListener(("click"),()=>{
+            let message
+            let uweight=document.querySelector("#Weight").value
+            let uheight=document.querySelector("#height").value
+    
+            let clculateheight=uheight*0.3048
+
+            let checkbmi=uweight/(clculateheight*clculateheight)
+
+            
+            if(checkbmi < 18.5){
+                    message=checkbmi.toFixed(2)+" Underweight"
+            }else if(checkbmi>=18.5 && checkbmi<=24.9){
+                message=checkbmi.toFixed(2)+" Normal Weight"
+            }else if(checkbmi>=24.9 && checkbmi<=29.9){
+                message=checkbmi.toFixed(2)+" Overweight"
+            }else if(checkbmi>=30.0 && checkbmi<=34.9){
+                message=checkbmi.toFixed(2)+" Obese class I"
+            }else if(checkbmi>=35.0 && checkbmi<=39.9){
+                message=checkbmi.toFixed(2)+" Obese class II"
+            }else if(checkbmi>=39.9 && checkbmi<=40.0){
+                message=checkbmi.toFixed(2)+" Obese class III"
+            }
+        
+            document.querySelector("h5").textContent=message
+        })
+
+        
+    </script>
+</body>
+</html>

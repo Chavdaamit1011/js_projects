@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gaming Quote Generator</title>
+
+  <!-- Bootstrap CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Optional: Gaming font -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet" />
+</head>
+<body class="bg-dark text-white d-flex justify-content-center align-items-center vh-100">
+
+  <div class="card text-center bg-gradient p-4" style="background: linear-gradient(to bottom right, #000428, #004e92); border: 2px solid #0ff; border-radius: 20px; font-family: 'Orbitron', sans-serif; max-width: 500px; width: 100%;">
+    <h4 class="mb-4">🎮 Gaming Quote Generator</h4>
+    
+    <div id="quoteDisplay" class="mb-4 fs-5 fw-semibold text-info">Click the button below to get a quote!</div>
+
+    <button id="generateBtn" class="btn btn-lg fw-bold text-white" style="background: linear-gradient(45deg, #00f0ff, #007cf0); border: none;">
+      🔁 Generate Quote
+    </button>
+  </div>
+
+  <!-- Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    const quotes = [
+      "🔫 Lock, load, and dominate!",
+      "💥 Frag now, ask later.",
+      "🎯 Headshots only.",
+      "🔥 Respawn is not an option.",
+      "💡 Strategy wins wars.",
+      "⚔️ Victory is mine!",
+      "🕹️ Play hard, win harder.",
+      "👾 Power up and go!"
+    ];
+
+    const quoteDisplay = document.getElementById('quoteDisplay');
+    const generateBtn = document.getElementById('generateBtn');
+
+    generateBtn.addEventListener('click', () => {
+      const randomIndex = Math.floor(Math.random() * quotes.length);
+      quoteDisplay.textContent = quotes[randomIndex];
+    });
+  </script>
+
+</body>
+</html>

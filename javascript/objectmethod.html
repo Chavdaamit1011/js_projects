@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    .container {
+
+        display: flex;
+        justify-content: space-evenly;
+
+        img {
+            height: 200px;
+            width: 200px;
+        }
+
+    }
+</style>
+
+
+<body>
+    <!-- 
+    <div class="container">
+
+    </div> -->
+
+
+    <script>
+        // let product = [
+        //     {
+        //         id: 101,
+        //         name: "mobile",
+        //         image: "https://imgv3.fotor.com/images/gallery/cartoon-character-generated-by-Fotor-ai-art-creator.jpg",
+        //         category: "electronics",
+        //         price: 45000,
+        //     },
+        //     {
+        //         id: 102,
+        //         name: "shampoo",
+        //         image: "https://imgv3.fotor.com/images/gallery/cartoon-character-generated-by-Fotor-ai-art-creator.jpg",
+        //         category: "cosmetics",
+        //         price: 350,
+        //     },
+        //     {
+        //         id: 104,
+        //         name: "lipstric",
+        //         image: "https://imgv3.fotor.com/images/gallery/cartoon-character-generated-by-Fotor-ai-art-creator.jpg",
+        //         category: "cosmetics",
+        //         price: 450,
+        //     },
+        //     {
+        //         id: 105,
+        //         name: "tshirt",
+        //         image: "https://imgv3.fotor.com/images/gallery/cartoon-character-generated-by-Fotor-ai-art-creator.jpg",
+        //         category: "cloths",
+        //         price: 999,
+        //     }
+        // ]
+
+        // console.log(product)
+
+        // product.map((pro,i)=>(
+        //     console.log(pro.name)
+        // ))
+
+        // let filterdata=product.filter((pro)=>pro.category==="cosmetics")
+        // console.log(filterdata);
+        // let filterdata=product.filter((pro)=>pro.price<=1000)
+        // console.log(filterdata);
+
+        // WITH DOM===============================================================================================
+        // let con=document.querySelector(".container")
+
+        // product.map((pro,i)=>{
+        //     let card=document.createElement("div")
+        //     card.innerHTML=`
+        //     <h1>${pro.name}</h1>
+        //     <p>${pro.price}</p>
+        //     <p>${pro.category}</p>
+        //     <img src=${pro.image}>`
+
+
+        //     con.appendChild(card)
+        //     console.log(card);
+        // })
+        //WITH DOM SECOND RIT====================================================================================
+
+        // let con = document.querySelector(".container")
+
+        // product.map((pro, i) => {
+        //     let card = document.createElement("div")
+
+        //     let nm = document.createElement("h1")
+        //     nm.textContent = pro.name
+
+        //     let image = document.createElement("img")
+        //     image.src = pro.image
+        //     image.classList.add("imagesize")
+
+        //     let price = document.createElement("p")
+        //     price.textContent = pro.price
+
+        //     let category = document.createElement("p")
+        //     category.textContent = pro.category
+
+        //     card.appendChild(nm)
+        //     card.appendChild(image)
+        //     card.appendChild(price)
+        //     card.appendChild(category)
+
+        //     con.appendChild(card)
+
+        // })
+
+
+
+        // =========================================================================================================================
+        // OBJECTS METHODS==KEYS,VALUES,ENTRIES=====================================================================================
+
+        // user = [{
+        //     id: 101,
+        //     name: "test",
+        //     email: "test@email.com",
+        // },
+        // {
+        //     id: 105,
+        //     name: "tshirt",
+        //     category: "cloths",
+        //     price: 999,
+        // }]
+
+
+        // let a = Object.keys(user)
+        // console.log(a);
+        // let a1 = Object.values(user)
+        // console.log(a1);
+        // let a2 = Object.entries(user)
+        // console.log(a2);
+
+        // =====================================================================================================
+        //truthy and falsy values in javascript===========================
+        // function test() {
+        //     console.log("object");
+        // }
+
+        // if (test) {
+        //     console.log("Yes");
+        // } else {
+        //     console.log("No");
+        // }
+
+        // =========================================================================================================
+
+        // const myObject = {
+        //     property1: 10,
+        //     property2: "hello"
+        // }
+
+        // Object.freeze(myObject);
+
+        // myObject.property1 = 20; // This will be ignored in strict mode, but won't throw an error in non-strict mode.
+        // myObject.property3 = 33; // This will be ignored.
+        // delete myObject.property2; // This will be ignored.
+
+        // console.log(myObject); // Output: { property1: 10, property2: "hello"} 
+
+        // ===========================================================================================================
+
+        // Object.seal()
+        // const anotherObject = {
+        //     key1: "valueA",
+        //     key2: 123
+        // };
+
+        // Object.seal(anotherObject);
+
+        // anotherObject.key1 = "newValue"; // This is allowed.
+        // anotherObject.key3 = "hii"; // This will be ignored.
+        // delete anotherObject.key2; // This will be ignored.
+
+        // console.log(anotherObject);
+
+        // ==========================================================================================================
+
+        //  | લૂપ પ્રકાર | શું આપે છે ?  | ઉદાહરણ |
+        // | ---------- | ------------ | --------------- |
+        // | for...in | index આપે છે | 0, 1, 2...    |
+        // | for...of | value આપે છે | 10, 20, 30... |
+
+
+        // let no=[10,20,30,40,50]
+
+        // for(let i in no){
+        //     console.log(i,no[i]);
+        // }
+
+        // for(let a of no){
+        //     console.log(no);
+        // }
+
+        // ===========================================================================================================
+
+        
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

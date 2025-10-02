@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" placeholder="Enter your Num" id="num1">
+    <input type="text" placeholder="Enter your Num" id="num2">
+    <h1 id="ans">your ans is=</h1>
+
+
+    <script>
+
+        var a = prompt("Enter the A:")
+        console.log(a)
+
+        var b = prompt("Enter the B:")
+        console.log(b)
+
+        var sign = prompt(" Enter the sign...+,-,*,/:")
+        console.log(sign)
+
+        const seta = document.getElementById("num1")
+        seta.value = a
+        const setb = document.getElementById("num2")
+        setb.value = b
+        
+        switch (sign) {
+
+
+            case '+':
+                let sum = (Number(a) + Number(b))
+                console.log(sum)
+
+                document.getElementById("ans").textContent = "your ans is :" + sum
+
+                break;
+
+            case '-':
+                let min = (Number(a) - Number(b))
+                console.log(min)
+                document.getElementById("ans").textContent = "your ans is :" + min
+                break
+
+            case '*':
+                let multi = (Number(a) * Number(b))
+                console.log(multi)
+                document.getElementById("ans").textContent = "your ans is :" + multi
+                break
+
+            case '/':
+                let divde = (Number(a) / Number(b))
+                console.log(divde)
+                document.getElementById("ans").textContent = "your ans is :" + divde
+                break;
+        }
+    </script>
+</body>
+
+</html>

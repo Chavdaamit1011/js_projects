@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dice Game</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+
+  <style>
+    body {
+      background: linear-gradient(135deg, #d1c4e9, #b2dfdb);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 30px 15px;
+    }
+
+    h1 {
+      font-weight: bold;
+      color: #4a148c;
+      margin-bottom: 40px;
+      text-shadow: 2px 2px 4px #fff;
+    }
+
+    .card {
+      border: none;
+      padding: 20px;
+      text-align: center;
+      background: #ffffffee;
+      border-radius: 12px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .dice-box img {
+      width: 120px;
+      height: 120px;
+      animation: rollDice 0.6s ease-in-out;
+    }
+
+    @keyframes rollDice {
+      0% {
+        transform: scale(1) rotate(0deg);
+        opacity: 0.8;
+      }
+
+      50% {
+        transform: scale(1.3) rotate(180deg);
+        opacity: 1;
+      }
+
+      100% {
+        transform: scale(1) rotate(360deg);
+        opacity: 1;
+      }
+    }
+
+    #winner {
+      text-align: center;
+      font-size: 2rem;
+      margin-top: 30px;
+      color: #1b5e20;
+      font-weight: 700;
+      text-shadow: 1px 1px 2px #fff;
+    }
+
+    .btn-lg {
+      padding: 12px 30px;
+      font-size: 1.2rem;
+    }
+
+    .btn-area {
+      margin-top: 30px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container text-center">
+    <h1>🎲 Dice Game 🎲</h1>
+
+    <div class="row justify-content-center">
+      <div class="col-md-4 col-sm-6 mb-4">
+        <div class="card">
+          <h3>Player 1</h3>
+          <div id="dice1" class="dice-box">
+            <img src="https://www.calculator.net/img/dice1.png" alt="Dice">
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-6 mb-4">
+        <div class="card">
+          <h3>Player 2</h3>
+          <div id="dice2" class="dice-box">
+            <img src="https://www.calculator.net/img/dice1.png" alt="Dice">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="btn-area">
+      <button id="rollBtn" class="btn btn-primary btn-lg">Roll Dice</button>
+    </div>
+
+    <h1 id="winner"></h1>
+  </div>
+
+  <script>
+    var imge = ["",
+      "https://www.calculator.net/img/dice1.png",
+      "https://www.calculator.net/img/dice2.png",
+      "https://www.calculator.net/img/dice3.png",
+      "https://www.calculator.net/img/dice4.png",
+      "https://www.calculator.net/img/dice5.png",
+      "https://www.calculator.net/img/dice6.png"
+    ]
+
+    let dice = () => {
+      let dicenum = [1, 2, 3, 4, 5, 6]
+
+      let plyr1 = dicenum[Math.floor(Math.random() * dicenum.length)]
+      let plyr2 = dicenum[Math.floor(Math.random() * dicenum.length)]
+
+      document.getElementById("dice1").innerHTML = `<img src="${imge[plyr1]}" alt="dice${plyr1}">`
+      document.getElementById("dice2").innerHTML = `<img src="${imge[plyr2]}" alt="dice${plyr2}">`
+
+      let win = document.getElementById("winner")
+      if (plyr1 > plyr2) {
+        win.innerText = "🏆 Player 1 Wins"
+      } else if (plyr2 > plyr1) {
+        win.innerText = "🏆 Player 2 Wins"
+      } else {
+        win.innerText = "✌️ It's a Tie!"
+      }
+    }
+
+    document.getElementById("rollBtn").addEventListener("click", dice)
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billing Management System</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-light">
+
+    <div class="container p-5 border border-secondary">
+        <h2 class="text-center ">Billing Management System</h2>
+
+        <div class="row">
+
+            <div class="col-md-6">
+                <table class="table table-bordered table-striped text-center">
+                    <thead class="table-primary">
+                        <tr>
+                            <th>Items</th>
+                            <th>Number of Items</th>
+                            <th>Cost of Item</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Bread</td>
+                            <td><input type="number" id="bread"></td>
+                            <td>
+                                <p id="breadans"></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Rice</td>
+                            <td> <input type="number" id="rice">
+                            </td>
+                            <td>
+                                <p id="riceans"></p>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Beans</td>
+                            <td> <input type="number" id="beans">
+                            </td>
+                            <td>
+                                <p id="beansans"></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Wine</td>
+                            <td><input type="number" id="wine">
+                            </td>
+                            <td>
+                                <p id="wineans"></p>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Milk</td>
+                            <td><input type="number" id="milk">
+                            </td>
+                            <td>
+                                <p id="milkans"></p>
+                            </td>
+                        </tr>
+                        <tr class="fw-bold">
+                            <td>Total Cost</td>
+                            <td> <input type="number" id="totalcostitem" disabled>
+                            </td>
+                            <td>
+                                <p id="totalcostans"></p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+            <div class="col-md-6">
+                <table class="table table-bordered text-center">
+                    <thead class="table-success">
+                        <tr>
+                            <th>Items</th>
+                            <th>Number of Items</th>
+                            <th>Cost of Item</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Bread</td>
+                            <td id="bread"></td>
+                            <td id="breadans"></td>
+                        </tr>
+                        <tr>
+                            <td>Rice</td>
+                            <td id="Riceitems"></td>
+                            <td id="Ricecost"></td>
+                        </tr>
+                        <tr>
+                            <td>Beans</td>
+                            <td  id="beansitems"></td>
+                            <td id="beanscost"></td>
+                        </tr>
+                        <tr>
+                            <td>Wine</td>
+                            <td id="Wineitems"></td>
+                            <td id="Winecost"></td>
+                        </tr>
+                        <tr>
+                            <td>Milk</td>
+                            <td id="Milkitems"></td>
+                            <td  id="Milkcost"></td>
+                        </tr>
+                        <tr class="fw-bold">+
+                            <td>Total Cost</td>
+                            <td></td>
+                            <td id="totalcostans"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+        <div class="text-center ">
+            <button id="total" class="btn btn-primary mx-2">Total</button>
+            <button class="btn btn-primary mx-2">Receipt</button>
+            <button class="btn btn-primary mx-2">Reset</button>
+            <button class="btn btn-danger mx-2">Exit</button>
+        </div>
+    </div>
+
+    <script src="billing_system.js"></script>
+
+</body>
+
+</html>

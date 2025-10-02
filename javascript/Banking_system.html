@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banking system</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <h2>Banking System</h2>
+
+        <div id="login">
+            <input type="text" id="accno" placeholder="Enter Account Number"><br><br>
+            <input type="password" id="pin" placeholder="Enter PIN"><br><br>
+            <button onclick="login()">Login</button>
+        </div>
+
+        <div id="menu" style="display:none;">
+            <h3>Welcome to the Banking System</h3>
+            <button onclick="checkBalance()">1. Check Balance</button><br><br>
+            <button onclick="depositMoney()">2. Deposit Money</button><br><br>
+            <button onclick="withdrawMoney()">3. Withdraw Money</button><br><br>
+            <button onclick="logout()">4. Exit</button><br><br>
+            <div id="result"></div>
+        </div>
+    </div>
+
+    <script>
+        let accounts = [
+            { accno: "12345", pin: "1111", balance: 1000 },
+            { accno: "6789", pin: "2222", balance: 2000 },
+            { accno: "8520", pin: "3333", balance: 3000 }
+        ];
+
+        let currentAccount = null;
+
+        function login() {
+            let accno = document.getElementById("accno").value;
+            let pin = document.getElementById("pin").value;
+
+            for (let i = 0; i < accounts.length; i++) {
+                if (accounts[i].accno === accno && accounts[i].pin === pin) {
+                    currentAccount = accounts[i];
+                    document.getElementById("login").style.display = "none";
+                    document.getElementById("menu").style.display = "block";
+                    return;
+                }
+            }
+            alert("invalid account Number or PIN");
+        }
+
+        function checkBalance() {
+            document.getElementById("result").innerText = "Your Balance: ₹" + currentAccount.balance;
+        }
+
+        function depositMoney() {
+            let amount = parseFloat(prompt("Enter the amount to deposit:"));
+            if (!isNaN(amount) && amount > 0) {
+                currentAccount.balance += amount;
+                document.getElementById("result").innerText = "Deposited ₹" + amount + ". New Balance: ₹" + currentAccount.balance;
+            } else {
+                alert("Invalid amount");
+            }
+        }
+
+        function withdrawMoney() {
+            let amount = parseFloat(prompt("Enter the amount to withdraw:"));
+            if (!isNaN(amount) && amount > 0) {
+                if (amount <= currentAccount.balance) {
+                    currentAccount.balance -= amount;
+                    document.getElementById("result").innerText = "Withdrew ₹" + amount + ". New Balance: ₹" + currentAccount.balance;
+                } else {
+                    alert("insufficient balance");
+                }
+            } else {
+                alert("Invalid amount");
+            }
+        }
+
+        function logout() {
+            currentAccount = null;
+            document.getElementById("menu").style.display = "none";
+            document.getElementById("login").style.display = "block";
+            document.getElementById("accno").value = '';
+            document.getElementById("pin").value = '';
+            document.getElementById("result").innerText = '';
+        }
+    </script>
+</body>
+
+</html>

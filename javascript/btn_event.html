@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button id="genrate">genrat password</button>
+    <input id="input1" type="text">
+    <button id="copy1">copy</button>
+    <button id="cut1">cut</button>
+    <input id="input2" type="text">
+    <button id="paste1">paste</button>
+
+    <br><br>
+    <button id="lower">lower case</button>
+    <button id="upper">UPPER CASE</button>
+
+
+    <br><br><br>
+    <label> Enter Your password</label><br>
+    <input type="password" placeholder="enter your password" id="input1">
+    <button id="blick">Show Password</button><br>
+    <br>
+    <label> Enter Your password</label><br>
+    <input id="input2" type="password" placeholder="enter your password" id="">
+    <button id="bclick">btn</button><br>
+
+    <label> Enter Your password</label><br>
+    <input id="input3" type="password" placeholder="enter your password" id="">
+    <button id="mouseover">btn</button><br>
+
+
+    <label> Enter Your password</label><br>
+    <input id="input4" type="password" placeholder="enter your password" id="">
+    <button id="mouseout">btn</button><br>
+
+    <label> Enter Your password</label><br>
+    <input id="input5" type="password" placeholder="enter your password" id="">
+    <button id="mousemove">btn</button><br>
+
+    <script>
+
+
+        let genrate = document.getElementById("genrate")
+        let copyBtn = document.getElementById("copy1");
+        let cutBtn = document.getElementById("cut1");
+        let pasteBtn = document.getElementById("paste1");
+        let lowerBtn = document.getElementById("lower");
+        let upperBtn = document.getElementById("upper");
+
+        let input1 = document.getElementById("input1");
+        let input2 = document.getElementById("input2");
+
+        let char = "1234567890lkjhgfdsaqwertyuiopzxcvbnm!@#$%^&*()ZXCVBNMASDFGHJKLQWERTYUIOP"
+
+
+        genrate.addEventListener("click", () => {
+            let password = ""
+            for (let i = 0; i <= 10; i++) {
+                let random = Math.floor(Math.random() * char.length)
+                password = password + char.charAt(random)
+
+            }
+            document.querySelector("#input1").value = password
+        })
+
+        copyBtn.addEventListener("click", () => {
+            input1.select();
+            document.execCommand("copy");
+        });
+
+        cutBtn.addEventListener("click", () => {
+            input1.select();
+            document.execCommand("cut");
+        });
+
+
+        pasteBtn.addEventListener("click", () => {
+            navigator.clipboard.readText().then(text => {
+                input2.value = text;
+            });
+        });
+
+
+        lowerBtn.addEventListener("click", () => {
+            input1.value = input1.value.toLowerCase();
+
+        });
+
+        upperBtn.addEventListener("click", () => {
+            input1.value = input1.value.toUpperCase();
+
+        });
+
+
+
+        
+    </script>
+
+<script src="btn_event.js"></script>
+</body>
+
+</html>

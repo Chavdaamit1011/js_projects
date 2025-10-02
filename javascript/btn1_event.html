@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label> Enter Your password</label><br>
+    <input type="password" placeholder="enter your password" id="input1">
+    <button id="buclick">Show Password</button><br>
+    <br>
+    <label> Enter Your password</label><br>
+    <input id="input2" type="password" placeholder="enter your password" id="">
+    <button id="buclick">btn</button><br>
+
+    <label> Enter Your password</label><br>
+    <input id="input3" type="password" placeholder="enter your password" id="">
+    <button id="mouseover">btn</button><br>
+
+
+    <label> Enter Your password</label><br>
+    <input id="input4" type="password" placeholder="enter your password" id="">
+    <button id="mouseout">btn</button><br>
+
+    <label> Enter Your password</label><br>
+    <input id="input5" type="password" placeholder="enter your password" id="">
+    <button id="mousemove">btn</button><br>
+
+    <script>
+
+        let buclick = document.querySelector("#buclick")
+        let input1 = document.querySelector("#input1")
+        buclick.addEventListener(("click"), () => {
+
+            if (input1.type === 'password') {
+
+                input1.type = "text"
+                buclick.innerHTML = "Hide Password"
+            } else {
+                input1.type = 'password';
+                buclick.textContent = 'Show Password';
+            }
+        })
+
+        let input2 = document.querySelector("#input2")
+
+        input2.addEventListener(("mouseup"), () => {
+
+            if (input2.type === 'password') {
+
+                input2.type = "text"
+            } else {
+                input2.type = "password"
+            }
+        })
+
+        let input3 = document.querySelector("#input3")
+
+        input3.addEventListener(("mouseover"), () => {
+
+            if (input3.type === 'password') {
+
+                input3.type = "text"
+            } else {
+                input3.type = "password"
+            }
+        })
+
+
+        let input4 = document.querySelector("#input4")
+
+        input4.addEventListener(("mouseout"), () => {
+
+            if (input4.type === 'password') {
+
+                input4.type = "text"
+            } else {
+                input4.type = "password"
+            }
+        })
+        let input5 = document.querySelector("#input5")
+
+        input5.addEventListener(("mousemove"), () => {
+
+            if (input5.type === 'password') {
+
+                input5.type = "text"
+            } else {
+                input5.type = "password"
+            }
+        })
+
+    </script>
+</body>
+
+</html>

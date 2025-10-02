@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Q1==Rupees convert to dollar.</h1>
+
+    <input id="rupeesInput" type="number" placeholder=" Enter the rupees">
+    <button id="Enter">Click hear</button>
+
+    <h2 id="ans">Ans is :</h2>
+
+    <br>
+
+    <h1>Q2== Convert to km to meter.</h1>
+
+    <input id="Km" type="number" placeholder="Enter the KM">
+    <button id="Enter1">Click hear</button>
+
+    <h2 id="meater">Ans is :</h2>
+
+    <br>
+
+    <h1>Q3== Convert to inch to centimeater.</h1>
+
+    <input id="inch" type="number" placeholder="Enter the KM">
+    <button id="Enter2">Click hear</button>
+
+    <h2 id="centimeater">Ans is :</h2>
+
+
+    <script>
+        let num = document.querySelector("#Enter")
+        num.addEventListener(("click"), () => {
+
+            let rs = document.querySelector("#rupeesInput").value
+
+            let ans = rs / 88.67
+
+            document.querySelector("#ans").textContent = ans.toFixed(2)
+        })
+
+        // Q2..........================================================================================
+
+        let kilomeater = document.querySelector("#Enter1")
+        kilomeater.addEventListener(("click"), () => {
+            let km1 = document.querySelector("#Km").value
+            let Meater = km1 * 1000
+
+            document.querySelector("#meater").textContent = Meater
+        })
+
+
+        // Q3.......======================================================================================
+
+        let inch = document.querySelector("#Enter2")
+        inch = document.addEventListener(("click"), () => {
+            let inch1 = document.querySelector("#inch").value
+            let centimeater = inch1 * 2.54
+
+            document.querySelector("#centimeater").textContent = centimeater
+        })
+
+    </script>
+</body>
+
+</html>
